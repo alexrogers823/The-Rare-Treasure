@@ -1,7 +1,7 @@
 class Narration:
-    level = 1
+    level_num = 1
 
-    def beginning(level):
+    def level_prologue(level_num):
         start_narration = {
             "1": "This begins the first level",
             "2": "This begins the second level",
@@ -10,9 +10,9 @@ class Narration:
             "5": "This begins the fifth level"
         }
 
-        return start_narration[str(level)]
+        return start_narration[str(level_num)]
 
-    def ending(level):
+    def level_epilogue(level_num):
         end_narration = {
             "1": "This ends the first level",
             "2": "This ends the second level",
@@ -21,8 +21,13 @@ class Narration:
             "5": "This ends the fifth level"
         }
 
-        return end_narration[str(level)]
+        return end_narration[str(level_num)]
 
 
 class InvDescriptions:
-    descriptions = {} # This will have names and descriptions of items
+    descriptions = {
+        "Item 1": "This is item one",
+        "Item 2": "This is item two",
+        "Item 3": "This is item three",
+        "Major Item": "This is a major item"
+    } # This will have names and descriptions of items
