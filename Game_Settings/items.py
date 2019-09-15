@@ -8,7 +8,7 @@ class Inventory:
             for value in self.inv_list:
                 describe_inventory(value) # From dialogue.py
         else:
-            print("There's nothing in here yet. Start winning some items!")
+            print("There's nothing in here yet. Start collecting some items!")
 
 
     def add(self, item):

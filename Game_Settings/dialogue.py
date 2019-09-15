@@ -1,5 +1,4 @@
 class Narration:
-    level_num = 1
 
     def level_prologue(level_num):
         start_narration = {
@@ -22,6 +21,14 @@ class Narration:
         }
 
         return end_narration[str(level_num)]
+
+    # def show_ending(item_number):
+    #     if (player number) == item_number:
+    #         print('Good ending')
+    #     elif (player number) != 0:
+    #         print('Neutral ending')
+    #     else:
+    #         print('Bad ending')
 
 
 class InvDescriptions:

@@ -1,37 +1,62 @@
-
+from Game_Settings.game_interaction import Misc, Summary
+from Game_Settings.player_info import Player
+from Game_Settings.dialogue import Narration
+import time
 
 def intro():
     # some stuff here
-    create_character()
-    gameplay()
+    title = '{1}{0}{1}'.format('The Rare Treasure', '~'*3)
+    print(title)
+    player = create_character()
+    gameplay(player)
 
 def create_character():
-    pass
+    player_name = input('What is your name?\n')
+    player = Player(player_name)
+    return player
 
-def gameplay():
-    if level < 6:
-        play_level(level)
+
+def gameplay(player):
+    if Misc.game_level < 6:
+        play_level(player)
     else:
-        final_level()
+        final_level(player)
 
-def play_level(level_num):
+def play_level(player):
+    print(Narration.level_prologue(Misc.game_level))
     # Rapid fire questions
-    if all_items_collected == False:
-        door_num = input('Which door do you want to open?\n\n')
-        validate_door(door_num)
-        enter_door()
-    else:
-        exchange_items()
+    while Misc.items_collected == False:
+        Misc.select_door()
+        Misc.validate_door()
+        Misc.enter_door()
+        Misc.check_item_count()
 
-def final_level():
-    max_items = 5
-    # Ask for password (from the items)
-    if (you still have items left):
-        item = input('{} has {} item{} to sacrifice. Choose which one to give.\n\n')
-        exchange_major_item(item)
-    else:
-        credits(max_items)
+    exchange_items(player)
+    # Narration.level_epilogue(Misc.game_level)
 
-def credits(number):
-    show_ending(number)
-    display_credits()
+# def final_level():
+#     max_items = 5
+#     # Ask for password (from the items)
+#     if (you still have items left):
+#         item = input('{} has {} item{} to sacrifice. Choose which one to give.\n\n')
+#         exchange_major_item(item)
+#     else:
+#         credits(max_items)
+#
+# def credits(number):
+#     show_ending(number)
+#     display_credits()
+
+
+def exchange_items(player):
+    print('Exchanged\n')
+    time.sleep(1)
+    print(Narration.level_epilogue(Misc.game_level))
+    Summary.level_summary(player)
+    Misc.level_up()
+    play_level(player)
+
+
+
+intro()
+# play_level()

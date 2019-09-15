@@ -4,8 +4,7 @@ class Player:
         # Add inventory and silver here
         self.name = name
         self.silver = 0
-        self.backpack = Inventory
-        pass
+        # self.backpack = Inventory
 
 
 class Narrator:

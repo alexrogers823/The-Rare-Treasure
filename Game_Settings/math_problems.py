@@ -2,7 +2,7 @@ from random import choice
 
 class Problems:
 
-    def word_problem(self):
+    def word_problem():
         problem_list = [
             '''On Monday, Johnny has 10 apples. Tuesday, he goes to the apple farm and picks up
             3 more. On Wednesday, he sells 6 to his friend Danny. Then on Thursday, he picks up
