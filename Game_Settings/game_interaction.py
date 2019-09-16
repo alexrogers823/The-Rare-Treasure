@@ -1,4 +1,5 @@
 from .math_problems import Problems
+from .items import Inventory
 
 class Misc:
     game_level = 1
@@ -24,12 +25,13 @@ class Misc:
         if Misc.selected_door not in Misc.door_options:
             print('Not a valid door')
 
-    def enter_door():
+    def enter_door(player):
+        prize = Inventory.item_list[str(Misc.game_level)][int(Misc.selected_door)-1]
         question = Problems.word_problem()
         answer = input(question + '\n')
         if int(answer) == 4: #Temporary
-            # character.receive_item() #Fill in later
-            print('Correct! You received the item (this item)')
+            print('Correct! You received the item: {}'.format(prize))
+            player.backpack.add(prize)
             Misc.item_count += 1
             Misc.update_door_options()
         else:
@@ -64,4 +66,4 @@ class Summary:
         print('{}\'s Stats:'.format(player.name))
         print(player.silver)
         print('Items in inventory:')
-        # player.backpack.describe() #Set up later
+        player.backpack.describe()

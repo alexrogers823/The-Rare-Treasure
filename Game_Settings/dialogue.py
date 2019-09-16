@@ -38,3 +38,6 @@ class InvDescriptions:
         "Item 3": "This is item three",
         "Major Item": "This is a major item"
     } # This will have names and descriptions of items
+
+    def describe_inventory(item):
+        print(item + '\n - ' + InvDescriptions.descriptions[item])

@@ -1,10 +1,11 @@
+from .items import Inventory
 
 class Player:
     def __init__(self, name):
         # Add inventory and silver here
         self.name = name
         self.silver = 0
-        # self.backpack = Inventory
+        self.backpack = Inventory()
 
 
 class Narrator:

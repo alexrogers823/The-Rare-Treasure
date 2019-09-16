@@ -1,4 +1,10 @@
+from .dialogue import InvDescriptions
+
 class Inventory:
+    item_list = {
+        "1": ["Item 1", "Item 2", "Item 3"]
+    }
+
     def __init__(self):
         self.inv_list = []
 
@@ -6,7 +12,7 @@ class Inventory:
     def describe(self):
         if self.inv_list:
             for value in self.inv_list:
-                describe_inventory(value) # From dialogue.py
+                InvDescriptions.describe_inventory(value) # From dialogue.py
         else:
             print("There's nothing in here yet. Start collecting some items!")
 

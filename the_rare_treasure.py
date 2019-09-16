@@ -28,7 +28,7 @@ def play_level(player):
     while Misc.items_collected == False:
         Misc.select_door()
         Misc.validate_door()
-        Misc.enter_door()
+        Misc.enter_door(player) #Will change later
         Misc.check_item_count()
 
     exchange_items(player)
