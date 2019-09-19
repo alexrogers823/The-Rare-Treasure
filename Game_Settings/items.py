@@ -2,7 +2,16 @@ from .dialogue import InvDescriptions
 
 class Inventory:
     item_list = {
-        "1": ["Item 1", "Item 2", "Item 3"]
+        "1": ["Crimson Scarf", "Angel's Blood", "Ring of Fire"],
+        "2": ["Sun Dial", "Pure Lemon", "Golden Axe", "Warning Light"],
+        "3": ["Orange Juice", "Orange Pie", "Orange Rind",
+                "Orange Popsicle", "Map of Orange Orchards"],
+        "4": ["Sage Stone", "Forest Leaf", "Northern Grass",
+                "Dollar Bill", "Healing Potion", "Four-Leaf Clover"],
+        "5": ["Cerelean Key", "Azure Lake Sample", "Sky Mist",
+                "Teary-Eyed Frog", "Turquoise Shell", "Healing Heart", "Sapphire Necklace"],
+        "6": ["Right Arm", "Left Arm", "Right Leg", "Left Leg", "Head", "Heart"],
+        "Major": ["Red Orb", "Yellow Orb", "Orange Orb", "Green Orb", "Blue Orb"]
     }
 
     def __init__(self):
