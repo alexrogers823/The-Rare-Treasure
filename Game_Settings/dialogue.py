@@ -2,11 +2,20 @@ class Narration:
 
     def level_prologue(level_num):
         start_narration = {
-            "1": "This begins the first level",
-            "2": "This begins the second level",
-            "3": "This begins the third level",
-            "4": "This begins the fourth level",
-            "5": "This begins the fifth level"
+            "1": "Are you the one they call {name}? I need your help. I've had some key items taken\
+            from me. I believe they're in each of these rooms. Return these items to me {name}, \
+            and I can give you something in return...",
+            "2": "Ahh Yellow! The color of happiness! Friendship! I feel so yellow, don't you? \
+            What's your name again? {name}? Right. Well...I need more yellow. There's some more \
+            in here somewhere...",
+            "3": "{message} Oh I'm sorry {name}, I've been speaking backwards and not in the \
+            right frame of mind. I need orange ASAP. I'm losing my mind!",
+            "4": "Money, nature, healing...you know {name}, life itself is surrounded by the \
+            color green. I'm one step closer to ridding the world of all sickness! I just need \
+            a little more...",
+            "5": "I'm sad all the time {name}...I'm just brooding in my sorrow. I don't know \
+            how else I can feel. I used to know the happier sides of blue, but they were \
+            stolen from me. But now that you're here, maybe you can help me get them back..."
         }
 
         return start_narration[str(level_num)]

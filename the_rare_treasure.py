@@ -23,7 +23,11 @@ def gameplay(player):
         final_level(player)
 
 def play_level(player):
-    print(Narration.level_prologue(Misc.game_level))
+    starting_dialogue = Narration.level_prologue(Misc.game_level)
+    print(starting_dialogue.format(
+        name=player.name,
+        message="Hey I really need your help!"[::-1]
+        ))
     # Rapid fire questions
     while Misc.items_collected == False:
         Misc.select_door()
