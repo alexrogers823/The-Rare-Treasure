@@ -32,3 +32,12 @@ class Inventory:
 
     def relinquish(self, item):
         self.inv_list.remove(item)
+
+
+    def exchange_items(self, level, major_item):
+        inv_list_copy = self.inv_list[:]
+        for minor_item in inv_list_copy:
+            if minor_item in Inventory.item_list[level]:
+                self.relinquish(minor_item)
+
+        self.add(major_item)

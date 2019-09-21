@@ -35,8 +35,10 @@ def play_level(player):
         Misc.enter_door(player) #Will change later
         Misc.check_item_count()
 
-    exchange_items(player)
-    # Narration.level_epilogue(Misc.game_level)
+    Misc.timed_problem(player)
+    print(Narration.level_epilogue(Misc.game_level))
+    time.sleep(1)
+    close_level(player)
 
 # def final_level():
 #     max_items = 5
@@ -52,10 +54,7 @@ def play_level(player):
 #     display_credits()
 
 
-def exchange_items(player):
-    print('Exchanged\n')
-    time.sleep(1)
-    print(Narration.level_epilogue(Misc.game_level))
+def close_level(player):
     Summary.level_summary(player)
     Misc.level_up()
     play_level(player)

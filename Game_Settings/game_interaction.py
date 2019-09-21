@@ -30,8 +30,7 @@ class Misc:
         question = Problems.word_problem()
         answer = input(question + '\n')
         if int(answer) == 4: #Temporary
-            print('Correct! You received the item: {}'.format(prize))
-            player.backpack.add(prize)
+            player.solve_problem(prize)
             Misc.item_count += 1
             Misc.update_door_options()
         else:
@@ -43,6 +42,10 @@ class Misc:
     def check_item_count():
         if Misc.item_count == Misc.item_goal:
             Misc.items_collected = True
+
+    def timed_problem(player):
+        # This is where timed problem at the end will come
+        player.receive_major_item(Misc.game_level)
 
     def level_up():
         Misc.game_level += 1
@@ -63,7 +66,6 @@ class Summary:
 
 
     def player_summary(player):
-        print('{}\'s Stats:'.format(player.name))
-        print(player.silver)
-        print('Items in inventory:')
+        print(f'{player.name}\'s Stats:')
+        print(f'{player.silver} coins')
         player.backpack.describe()
